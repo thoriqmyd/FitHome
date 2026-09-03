@@ -1,0 +1,41 @@
+{
+    "name": "homefit",
+    "module": "index.ts",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build",
+        "db:generate": "bun x drizzle-kit generate",
+        "db:migrate": "bun x drizzle-kit migrate"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/node": "^26.4.0",
+        "@types/pg": "^8.23.1",
+        "@types/react": "^19.2.18",
+        "@types/react-dom": "^19.2.5",
+        "@vitejs/plugin-react": "^6.1.1",
+        "drizzle-kit": "^1.0.0-rc.4",
+        "tsx": "^4.23.13",
+        "vite": "^8.2.2"
+    },
+    "peerDependencies": {
+        "typescript": "^7.0.2"
+    },
+    "dependencies": {
+        "@better-auth/drizzle-adapter": "^1.7.2",
+        "@elysia/eden": "^1.4.10",
+        "@elysia/openapi": "^1.4.16",
+        "@tailwindcss/vite": "^4.3.3",
+        "@tanstack/react-router": "^1.170.32",
+        "@tanstack/react-start": "^1.168.49",
+        "better-auth": "^1.7.2",
+        "drizzle-orm": "^1.0.0-rc.4",
+        "elysia": "^1.4.30",
+        "pg": "^8.23.0",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8",
+        "tailwindcss": "^4.3.3"
+    }
+}
