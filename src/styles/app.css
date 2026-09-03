@@ -1,0 +1,13 @@
+/* src/styles/app.css */
+@import 'tailwindcss';
+
+:root {
+  --bg-dark: #0f1115;
+  --card-bg: #181b20;
+  --card-border: #262a33;
+  --accent-yellow: #ffc107;
+  --accent-yellow-hover: #e0a800;
+  --text-light: #f8f9fa;
+  --text-muted: #a0a5b1;
+  --green-success: #28a745;
+}
