@@ -1,1290 +1,295 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitHome - Stronger Everyday</title>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #0f1115;
-            --card-bg: #181b20;
-            --card-border: #262a33;
-            --accent-yellow: #ffc107;
-            --accent-yellow-hover: #e0a800;
-            --text-light: #f8f9fa;
-            --text-muted: #a0a5b1;
-            --green-success: #28a745;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* --- NAVBAR --- */
-        header {
-            background-color: rgba(15, 17, 21, 0.95);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid var(--card-border);
-            backdrop-filter: blur(8px);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--text-light);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: var(--accent-yellow);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--accent-yellow);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* Hamburger toggle button (mobile only) */
-        .hamburger-btn {
-            display: none;
-            background: transparent;
-            border: 1px solid var(--card-border);
-            color: var(--text-light);
-            width: 40px;
-            height: 40px;
-            border-radius: 4px;
-            font-size: 18px;
-            cursor: pointer;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .btn-yellow {
-            background-color: var(--accent-yellow);
-            color: #000;
-            padding: 10px 22px;
-            border: none;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 13px;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-yellow:hover {
-            background-color: var(--accent-yellow-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text-light);
-            border: 1px solid var(--card-border);
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 13px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--accent-yellow);
-            color: var(--accent-yellow);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 20px 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 600px;
-            z-index: 2;
-        }
-
-        .hero-subtitle {
-            color: var(--accent-yellow);
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .hero-title {
-            font-size: 54px;
-            line-height: 1.1;
-            font-weight: 800;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .hero-title span {
-            color: var(--accent-yellow);
-            display: block;
-        }
-
-        .hero-desc {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 30px;
-            max-width: 480px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-video {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .btn-video i {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 193, 7, 0.2);
-            color: var(--accent-yellow);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-            position: relative;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            filter: grayscale(20%) contrast(110%);
-        }
-
-        /* --- FEATURES STRIP --- */
-        .features-strip {
-            background-color: var(--card-bg);
-            border-y: 1px solid var(--card-border);
-            padding: 30px 20px;
-            margin-bottom: 80px;
-        }
-
-        .features-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-        }
-
-        .feature-card {
-            display: flex;
-            gap: 15px;
-            align-items: flex-start;
-        }
-
-        .feature-icon {
-            background: rgba(255, 193, 7, 0.1);
-            color: var(--accent-yellow);
-            width: 48px;
-            height: 48px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            flex-shrink: 0;
-        }
-
-        .feature-info h4 {
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 4px;
-        }
-
-        .feature-info p {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        /* --- SECTION COMMONS --- */
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-subtitle {
-            color: var(--accent-yellow);
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .section-title {
-            font-size: 32px;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-top: 5px;
-        }
-
-        /* --- PROGRAM SECTION --- */
-        .programs {
-            max-width: 1200px;
-            margin: 0 auto 100px;
-            padding: 0 20px;
-        }
-
-        .program-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .program-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .program-card:hover {
-            border-color: var(--accent-yellow);
-            transform: translateY(-5px);
-        }
-
-        .program-img {
-            height: 180px;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .program-body {
-            padding: 20px;
-        }
-
-        .program-icon-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .program-icon-title i {
-            color: var(--accent-yellow);
-        }
-
-        .program-title {
-            font-size: 15px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .program-desc {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-        }
-
-        .program-link {
-            color: var(--accent-yellow);
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        /* --- DASHBOARD & SYSTEM APP SECTION --- */
-        .app-workspace {
-            max-width: 1200px;
-            margin: 0 auto 100px;
-            padding: 0 20px;
-        }
-
-        .dashboard-container {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 30px;
-        }
-
-        .dashboard-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--card-border);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .user-welcome h3 {
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .user-welcome p {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .user-badge {
-            background: rgba(255, 193, 7, 0.15);
-            color: var(--accent-yellow);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-
-        /* DYNAMIC TABS SYSTEM (ALGORITHM FLOW) */
-        .system-tabs {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            border-bottom: 1px solid var(--card-border);
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-        }
-
-        .tab-btn {
-            background: transparent;
-            border: 1px solid var(--card-border);
-            color: var(--text-muted);
-            padding: 10px 18px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-            flex-shrink: 0;
-        }
-
-        .tab-btn:hover, .tab-btn.active {
-            background-color: var(--accent-yellow);
-            color: #000;
-            border-color: var(--accent-yellow);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* SYSTEM CONTENT MODULES */
-        .module-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .module-card {
-            background: var(--bg-dark);
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-            padding: 20px;
-        }
-
-        .module-card h4 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            color: var(--accent-yellow);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 5px;
-        }
-
-        .form-control {
-            width: 100%;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 10px;
-            border-radius: 4px;
-            color: #fff;
-            font-size: 13px;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-yellow);
-        }
-
-        .progress-bar-bg {
-            background: var(--card-border);
-            height: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-            margin: 10px 0;
-        }
-
-        .progress-bar-fill {
-            background: var(--accent-yellow);
-            height: 100%;
-            width: 65%;
-        }
-
-        /* MODALS (FOR LOGIN & PREMIUM) */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            padding: 20px;
-        }
-
-        .modal-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            width: 100%;
-            max-width: 420px;
-            padding: 30px;
-            border-radius: 12px;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        .modal-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            color: var(--accent-yellow);
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #08090b;
-            border-top: 1px solid var(--card-border);
-            padding: 40px 20px;
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-
-        .footer-col h5 {
-            color: var(--text-light);
-            font-size: 14px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .footer-col p, .footer-col a {
-            color: var(--text-muted);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--card-border);
-        }
-
-        /* TOAST NOTIFICATION */
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            left: 20px;
-            background: var(--accent-yellow);
-            color: #000;
-            padding: 12px 20px;
-            border-radius: 6px;
-            font-weight: 600;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            display: none;
-            z-index: 3000;
-            text-align: center;
-        }
-
-        /* =========================================================
-           RESPONSIVE / MOBILE STYLES
-           ========================================================= */
-
-        /* Tablet & below */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 42px;
-            }
-
-            .hero {
-                padding: 110px 20px 50px;
-            }
-        }
-
-        /* Mobile (phones) */
-        @media (max-width: 768px) {
-
-            /* --- Navbar: switch to hamburger --- */
-            .hamburger-btn {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 66px;
-                left: 0;
-                right: 0;
-                background-color: var(--bg-dark);
-                border-bottom: 1px solid var(--card-border);
-                flex-direction: column;
-                gap: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-            }
-
-            .nav-links.open {
-                max-height: 400px;
-            }
-
-            .nav-links li {
-                width: 100%;
-                border-bottom: 1px solid var(--card-border);
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 16px 20px;
-                font-size: 15px;
-            }
-
-            .nav-actions {
-                gap: 10px;
-            }
-
-            .nav-actions .btn-yellow,
-            .nav-actions .btn-outline {
-                padding: 8px 14px;
-                font-size: 12px;
-            }
-
-            /* --- Hero: stack image under text --- */
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 100px 20px 40px;
-                min-height: auto;
-            }
-
-            .hero-content {
-                max-width: 100%;
-            }
-
-            .hero-title {
-                font-size: 34px;
-            }
-
-            .hero-desc {
-                max-width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-image {
-                justify-content: center;
-                margin-top: 30px;
-            }
-
-            .hero-image img {
-                max-width: 85%;
-            }
-
-            /* --- Section titles --- */
-            .section-title {
-                font-size: 24px;
-            }
-
-            /* --- Features strip --- */
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            /* --- Program cards: single column --- */
-            .program-grid {
-                grid-template-columns: 1fr;
-            }
-
-            /* --- Dashboard --- */
-            .dashboard-container {
-                padding: 20px 15px;
-            }
-
-            .dashboard-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .module-grid {
-                grid-template-columns: 1fr;
-            }
-
-            /* --- About section --- */
-            .module-card[style] {
-                text-align: center;
-            }
-
-            /* --- Modals --- */
-            .modal-card {
-                padding: 22px;
-            }
-
-            /* --- Footer --- */
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 25px;
-            }
-
-            /* --- Toast: full width on mobile --- */
-            .toast {
-                bottom: 15px;
-                right: 15px;
-                left: 15px;
-            }
-        }
-
-        /* Small phones */
-        @media (max-width: 420px) {
-            .hero-title {
-                font-size: 28px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .hero-buttons .btn-yellow {
-                justify-content: center;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- NAVBAR -->
-    <header>
-        <div class="navbar">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-dumbbell" style="color: var(--accent-yellow);"></i> Fit<span>Home</span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a onclick="scrollToSection('hero'); closeMobileMenu();">Beranda</a></li>
-                <li><a onclick="scrollToSection('programs'); closeMobileMenu();">Program</a></li>
-                <li><a onclick="openDashboardView(); closeMobileMenu();">Dashboard</a></li>
-                <li><a onclick="scrollToSection('about'); closeMobileMenu();">Tentang Us</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="btn-outline" id="authBtn" onclick="openAuthModal()">Login</button>
-                <button class="btn-yellow" onclick="openPremiumModal()">Gabung Premium</button>
-                <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <div class="hero-subtitle">Bentuk Kekuatan. Bangun Kepercayaan Diri.</div>
-            <h1 class="hero-title">JADI VERSI <span>TERBAIKMU</span></h1>
-            <p class="hero-desc">Bergabunglah dengan komunitas yang mendorong, mendukung, dan membantu Anda menjadi versi terkuat dari diri Anda sendiri dari rumah.</p>
-            <div class="hero-buttons">
-                <button class="btn-yellow" onclick="openAuthModal()">Mulai Sekarang <i class="fa-solid fa-arrow-right"></i></button>
-                <a class="btn-video" onclick="showToast('Memutar video pengenalan...')">
-                    <i class="fa-solid fa-play"></i> Tonton Video
-                </a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=600&q=80" alt="Fitness Model">
-        </div>
-    </section>
-
-    <!-- FEATURES STRIP -->
-    <div class="features-strip">
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-dumbbell"></i></div>
-                <div class="feature-info">
-                    <h4>Peralatan Modern</h4>
-                    <p>Panduan latihan dengan atau tanpa alat rumah tangga.</p>
-                </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-user-ninja"></i></div>
-                <div class="feature-info">
-                    <h4>Pelatih Ahli</h4>
-                    <p>Instruktur tersertifikasi membimbing setiap langkah Anda.</p>
-                </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-clipboard-list"></i></div>
-                <div class="feature-info">
-                    <h4>Rencana Personal</h4>
-                    <p>Program workout & diet yang disesuaikan dengan target.</p>
-                </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
-                <div class="feature-info">
-                    <h4>Komunitas Suportif</h4>
-                    <p>Lingkungan positif yang membuat Anda tetap termotivasi.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- PROGRAM WORKOUT SECTION -->
-    <section class="programs" id="programs">
-        <div class="section-header">
-            <div class="section-subtitle">Program Kami</div>
-            <h2 class="section-title">LATIHAN. FOKUS. CAPAI.</h2>
-        </div>
-        <div class="program-grid">
-            <div class="program-card">
-                <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=500&q=80" class="program-img" alt="Strength Training">
-                <div class="program-body">
-                    <div class="program-icon-title">
-                        <i class="fa-solid fa-dumbbell"></i>
-                        <h3 class="program-title">Strength Training</h3>
-                    </div>
-                    <p class="program-desc">Bentuk otot tanpa lemak dan tingkatkan kekuatan tubuh secara keseluruhan.</p>
-                    <a class="program-link" onclick="selectProgram('Strength Training')">Pelajari Lebih Lanjut <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="program-card">
-                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=500&q=80" class="program-img" alt="Weight Loss">
-                <div class="program-body">
-                    <div class="program-icon-title">
-                        <i class="fa-solid fa-fire"></i>
-                        <h3 class="program-title">Weight Loss</h3>
-                    </div>
-                    <p class="program-desc">Program pembakaran lemak efektif untuk hidup yang lebih sehat.</p>
-                    <a class="program-link" onclick="selectProgram('Weight Loss')">Pelajari Lebih Lanjut <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="program-card">
-                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=80" class="program-img" alt="Functional Training">
-                <div class="program-body">
-                    <div class="program-icon-title">
-                        <i class="fa-solid fa-bolt"></i>
-                        <h3 class="program-title">Functional Training</h3>
-                    </div>
-                    <p class="program-desc">Tingkatkan mobilitas, daya tahan, dan performa aktivitas harian.</p>
-                    <a class="program-link" onclick="selectProgram('Functional Training')">Pelajari Lebih Lanjut <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="program-card">
-                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=500&q=80" class="program-img" alt="Yoga & Wellness">
-                <div class="program-body">
-                    <div class="program-icon-title">
-                        <i class="fa-solid fa-spa"></i>
-                        <h3 class="program-title">Yoga & Wellness</h3>
-                    </div>
-                    <p class="program-desc">Seimbangkan tubuh dan pikiran Anda dengan yoga dan peregangan.</p>
-                    <a class="program-link" onclick="selectProgram('Yoga & Wellness')">Pelajari Lebih Lanjut <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WORKSPACE ALGORITMA SYSTEM (DASHBOARD USER) -->
-    <section class="app-workspace" id="dashboard-section">
-        <div class="section-header">
-            <div class="section-subtitle">Fitur Aplikasi</div>
-            <h2 class="section-title">DASHBOARD USER & FITUR SISTEM</h2>
-        </div>
-
-        <div class="dashboard-container" id="dashboardApp">
-            <!-- Header User Status -->
-            <div class="dashboard-header">
-                <div class="user-welcome">
-                    <h3 id="userGreeting">Halo, FitHome User!</h3>
-                    <p id="userStatusSub">Status Akun: Free Tier</p>
-                </div>
-                <div class="user-badge" id="badgeStatus">FREE MEMBER</div>
-            </div>
-
-            <!-- TAB ALGORITMA (SESUAI FLOW CHART) -->
-            <div class="system-tabs">
-                <button class="tab-btn active" onclick="switchTab('tab-program')"><i class="fa-solid fa-list-check"></i> Program Workout</button>
-                <button class="tab-btn" onclick="switchTab('tab-latihan')"><i class="fa-solid fa-calendar-day"></i> Latihan Harian</button>
-                <button class="tab-btn" onclick="switchTab('tab-video')"><i class="fa-solid fa-video"></i> Video Workout</button>
-                <button class="tab-btn" onclick="switchTab('tab-progress')"><i class="fa-solid fa-chart-line"></i> Tracking Progress</button>
-                <button class="tab-btn" onclick="switchTab('tab-nutrisi')"><i class="fa-solid fa-apple-whole"></i> Nutrisi</button>
-                <button class="tab-btn" onclick="switchTab('tab-komunitas')"><i class="fa-solid fa-comments"></i> Komunitas</button>
-                <button class="tab-btn" onclick="switchTab('tab-fitur')"><i class="fa-solid fa-clock"></i> Fitur Pendukung</button>
-                <button class="tab-btn" onclick="switchTab('tab-profil')"><i class="fa-solid fa-user"></i> Akun Profil</button>
-            </div>
-
-            <!-- TAB CONTENT 1: PROGRAM WORKOUT -->
-            <div class="tab-content active" id="tab-program">
-                <div class="module-grid">
-                    <div class="module-card">
-                        <h4>1. Pilih Tujuan</h4>
-                        <div class="form-group">
-                            <select class="form-control" id="goalSelect">
-                                <option>Muscle Gain (Tambah Otot)</option>
-                                <option>Fat Loss (Bakar Lemak)</option>
-                                <option>Strength (Kekuatan)</option>
-                                <option>Endurance (Daya Tahan)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="module-card">
-                        <h4>2. Pilih Level</h4>
-                        <div class="form-group">
-                            <select class="form-control" id="levelSelect">
-                                <option>Beginner (Pemula)</option>
-                                <option>Intermediate (Menengah)</option>
-                                <option>Advanced (Mahir)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="module-card">
-                        <h4>3. Lihat Program & Jadwal</h4>
-                        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">Rekomendasi: 4 Hari / Minggu (Full Body & Cardio)</p>
-                        <button class="btn-yellow" onclick="showToast('Program Berhasil Dimulai!')">Mulai Program</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB CONTENT 2: LATIHAN HARIAN -->
-            <div class="tab-content" id="tab-latihan">
-                <div class="module-grid">
-                    <div class="module-card">
-                        <h4>Rencana Hari Ini</h4>
-                        <p style="font-size: 13px;"><strong>Sesi:</strong> Push-Up & Core Training</p>
-                        <ul style="font-size: 12px; color: var(--text-muted); margin: 10px 0 15px 20px;">
-                            <li>Push-Up: 3 Set x 12 Reps</li>
-                            <li>Plank: 3 Set x 45 Detik</li>
-                            <li>Bodyweight Squat: 4 Set x 15 Reps</li>
-                        </ul>
-                        <button class="btn-yellow" onclick="showToast('Sesi Latihan Selesai!')">Selesai Latihan</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB CONTENT 3: VIDEO WORKOUT -->
-            <div class="tab-content" id="tab-video">
-                <div class="module-grid">
-                    <div class="module-card">
-                        <h4>Kategori & Panduan Teknik</h4>
-                        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Video tutorial gerakan dasar dengan posture alignment yang tepat.</p>
-                        <button class="btn-outline" onclick="showToast('Video disimpan ke Favorit!')"><i class="fa-solid fa-bookmark"></i> Simpan ke Favorit</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB CONTENT 4: TRACKING PROGRESS -->
-            <div class="tab-content" id="tab-progress">
-                <div class="module-grid">
-                    <div class="module-card">
-                        <h4>Berat Badan & Measurement</h4>
-                        <div class="form-group">
-                            <label>Catat Berat Badan (kg):</label>
-                            <input type="number" class="form-control" value="70">
-                        </div>
-                        <button class="btn-yellow" onclick="showToast('Progress Berhasil Dicatat!')">Catat Hasil</button>
-                    </div>
-                    <div class="module-card">
-                        <h4>Grafik Progress</h4>
-                        <p style="font-size: 12px; color: var(--text-muted);">Target Bulanan: 75% Tercapai</p>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
-                        <p style="font-size: 11px; color: var(--text-muted);">Riwayat: 12 Sesi latihan bulan ini</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB CONTENT 5: NUTRISI -->
-            <div class="tab-content" id="tab-nutrisi">
-                <div class="module-grid">
-                    <div class="module-card">
-                        <h4>Kalkulator Kalori & Pola Makan</h4>
-                        <div class="form-group">
-                            <label>Asupan Kalori Harian (kcal):</label>
-                            <input type="number" class="form-control" value="2100">
-                        </div>
-                        <button class="btn-yellow" onclick="showToast('Catatan Asupan Disimpan!')">Simpan Asupan</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB CONTENT 6: KOMUNITAS -->
-            <div class="tab-content" id="tab-komunitas">
-                <div class="module-grid">
-                    <div class="module-card">
-                        <h4>Forum & Tantangan (Challenge)</h4>
-                        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Ikuti 30-Day Pushup Challenge bersama member lain!</p>
-                        <button class="btn-outline" onclick="showToast('Progress berhasil dibagikan ke Forum!')"><i class="fa-solid fa-share-nodes"></i> Bagikan Progress</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB CONTENT 7: FITUR PENDUKUNG -->
-            <div class="tab-content" id="tab-fitur">
-                <div class="module-grid">
-                    <div class="module-card">
-                        <h4>Timer & Stopwatch</h4>
-                        <h2 style="color: var(--accent-yellow); font-size: 28px; margin: 10px 0;">00:45</h2>
-                        <button class="btn-yellow" onclick="showToast('Timer Dimulai!')">Start Rest Timer</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB CONTENT 8: AKUN PROFIL -->
-            <div class="tab-content" id="tab-profil">
-                <div class="module-grid">
-                    <div class="module-card">
-                        <h4>Pengaturan Akun</h4>
-                        <p style="font-size: 13px;">Data Pribadi & Notifikasi</p>
-                        <br>
-                        <button class="btn-outline" style="color:#ff4d4d; border-color:#ff4d4d;" onclick="logoutUser()">Log Out (Keluar)</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section class="programs" id="about">
-        <div class="module-card" style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 280px;">
-                <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80" style="width:100%; border-radius:8px;" alt="Gym Community">
-            </div>
-            <div style="flex: 1; min-width: 280px;">
-                <div class="section-subtitle">TENTANG KAMI</div>
-                <h2 class="section-title" style="margin-bottom: 15px;">LEBIH DARI SEBUAH GYM, KAMI ADALAH KOMUNITAS.</h2>
-                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
-                    Di FitHome, kami percaya bahwa kebugaran adalah gaya hidup. Misi kami adalah membantu Anda tetap konsisten, menjadi lebih kuat, dan menjalani hidup yang lebih sehat dari mana saja.
-                </p>
-                <button class="btn-yellow" onclick="openAuthModal()">Bergabung dengan Komunitas <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h5><i class="fa-solid fa-location-dot"></i> Alamat</h5>
-                <p>123 Fitness Street,<br>Coimbatore, Tamil Nadu 641001</p>
-            </div>
-            <div class="footer-col">
-                <h5><i class="fa-solid fa-phone"></i> Telepon</h5>
-                <p>+91 91596 81276</p>
-            </div>
-            <div class="footer-col">
-                <h5><i class="fa-solid fa-envelope"></i> Email</h5>
-                <p>hello@fithome.com</p>
-            </div>
-            <div class="footer-col">
-                <h5><i class="fa-solid fa-clock"></i> Jam Operasional</h5>
-                <p>Sen - Sab: 5:30 AM - 10:00 PM</p>
-                <p>Minggu: 6:00 AM - 1:00 PM</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 FitHome. All Rights Reserved. Designed according to UI & Flowchart spec.</p>
-        </div>
-    </footer>
-
-    <!-- MODAL AUTH (LOGIN / REGISTER) -->
-    <div class="modal-overlay" id="authModal">
-        <div class="modal-card">
-            <i class="fa-solid fa-xmark modal-close" onclick="closeModal('authModal')"></i>
-            <div class="modal-title" id="authTitle">Login / Register</div>
-            <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" id="authEmail" class="form-control" placeholder="user@fithome.com">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" id="authPass" class="form-control" placeholder="••••••••">
-            </div>
-            <button class="btn-yellow" style="width: 100%; justify-content: center;" onclick="handleLogin()">Masuk ke Dashboard</button>
-        </div>
-    </div>
-
-    <!-- MODAL PEMBAYARAN PREMIUM -->
-    <div class="modal-overlay" id="premiumModal">
-        <div class="modal-card">
-            <i class="fa-solid fa-xmark modal-close" onclick="closeModal('premiumModal')"></i>
-            <div class="modal-title">Akses Premium</div>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 15px;">Dapatkan Program Eksklusif, Video Premium, Konsultasi Trainer, & Tanpa Iklan.</p>
-
-            <div class="form-group">
-                <label>Pilih Paket</label>
-                <select class="form-control" id="packageSelect">
-                    <option>Paket Bulanan - Rp 99.000 / bln</option>
-                    <option>Paket Tahunan - Rp 799.000 / thn</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Metode Pembayaran</label>
-                <select class="form-control">
-                    <option>Transfer Bank / QRIS</option>
-                    <option>Kartu Kredit / Debit</option>
-                    <option>E-Wallet (Gopay/OVO/Dana)</option>
-                </select>
-            </div>
-
-            <button class="btn-yellow" style="width: 100%; justify-content: center;" onclick="handlePayment()">Konfirmasi Pembayaran</button>
-        </div>
-    </div>
-
-    <!-- TOAST NOTIFICATION -->
-    <div class="toast" id="toastMsg">Notifikasi</div>
-
-    <!-- JAVASCRIPT LOGIC (ALGORITMA WORKFLOW) -->
-    <script>
-        let isLoggedIn = false;
-        let isPremium = false;
-
-        function showToast(text) {
-            const toast = document.getElementById('toastMsg');
-            toast.innerText = text;
-            toast.style.display = 'block';
-            setTimeout(() => {
-                toast.style.display = 'none';
-            }, 3000);
-        }
-
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function switchTab(tabId) {
-            const contents = document.querySelectorAll('.tab-content');
-            const tabs = document.querySelectorAll('.tab-btn');
-
-            contents.forEach(c => c.classList.remove('active'));
-            tabs.forEach(t => t.classList.remove('active'));
-
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-
-        function openAuthModal() {
-            document.getElementById('authModal').style.display = 'flex';
-        }
-
-        function openPremiumModal() {
-            document.getElementById('premiumModal').style.display = 'flex';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-
-        function handleLogin() {
-            const email = document.getElementById('authEmail').value;
-            if(!email) {
-                alert('Silakan masukkan email Anda.');
-                return;
-            }
-            isLoggedIn = true;
-            closeModal('authModal');
-
-            // Update UI Sesuai Flow
-            document.getElementById('userGreeting').innerText = `Halo, ${email.split('@')[0]}!`;
-            document.getElementById('authBtn').innerText = 'Profil Saya';
-            document.getElementById('authBtn').onclick = () => scrollToSection('dashboard-section');
-
-            showToast('Login Berhasil! Mengalihkan ke Dashboard...');
-            openDashboardView();
-        }
-
-        function handlePayment() {
-            // Algoritma simulasi konfirmasi pembayaran
-            isPremium = true;
-            closeModal('premiumModal');
-
-            document.getElementById('badgeStatus').innerText = 'PREMIUM MEMBER';
-            document.getElementById('badgeStatus').style.background = '#28a745';
-            document.getElementById('badgeStatus').style.color = '#fff';
-            document.getElementById('userStatusSub').innerText = 'Status Akun: Premium (Akses Eksklusif & Konsultasi Trainer)';
-
-            showToast('Pembayaran Berhasil! Email Konfirmasi Telah Dikirim.');
-        }
-
-        function logoutUser() {
-            isLoggedIn = false;
-            isPremium = false;
-            document.getElementById('userGreeting').innerText = 'Halo, FitHome User!';
-            document.getElementById('badgeStatus').innerText = 'FREE MEMBER';
-            document.getElementById('badgeStatus').style.background = 'rgba(255, 193, 7, 0.15)';
-            document.getElementById('badgeStatus').style.color = 'var(--accent-yellow)';
-            document.getElementById('authBtn').innerText = 'Login';
-            document.getElementById('authBtn').onclick = openAuthModal;
-            showToast('Anda telah Log Out.');
-        }
-
-        function openDashboardView() {
-            scrollToSection('dashboard-section');
-        }
-
-        function selectProgram(name) {
-            showToast(`Program ${name} dipilih!`);
-            openDashboardView();
-        }
-
-        // --- MOBILE HAMBURGER MENU ---
-        function toggleMobileMenu() {
-            document.getElementById('navLinks').classList.toggle('open');
-        }
-
-        function closeMobileMenu() {
-            document.getElementById('navLinks').classList.remove('open');
-        }
+<!doctype html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+      FitHome - Become Healthy At Home &amp; Anywhere
+    </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
     </script>
-</body>
-    </html>
+    <script src="index.js">
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Montserrat:wght@700;800;900&amp;display=swap" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body class="bg-[#f8f9fb] text-[#1a1a1a] antialiased selection:bg-brand selection:text-white">
+    <header class="sticky top-0 z-40 bg-[#0E0E12]/90 backdrop-blur-md border-b border-zinc-800" data-purpose="primary-navigation">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+        <button onclick="toggleMobileNav()" class="lg:hidden text-white p-2 -ml-2" aria-label="Menu">
+          <svg id="hamburger-icon" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <a class="flex items-center gap-2.5 group" href="#">
+          <div class="flex flex-col">
+            <div class="text-2xl font-heading font-black tracking-wider text-white">
+              HOME<span class="text-brand">FIT</span>
+            </div>
+          </div>
+        </a>
+        <nav class="hidden lg:flex items-center space-x-7 text-xs uppercase tracking-widest font-bold text-zinc-100 absolute left-1/2 -translate-x-1/2">
+          <a class="text-brand transition-colors" href="#hero">
+            Home
+          </a>
+          <a class="hover:text-brand transition-colors" href="#process">
+            Our Process
+          </a>
+          <a class="hover:text-brand transition-colors" href="dashboard.html">
+            Dashboard
+          </a>
+          <a class="hover:text-brand transition-colors" href="#community">
+            Community
+          </a>
+          <a class="hover:text-brand transition-colors" href="#about">About Us</a>
+        </nav>
+        <div class="flex items-center gap-4 ml-auto">
+          <a class="inline-flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full border-2 border-brand transition-all hover:-translate-y-0.5" href="sign-up.html">Sign Up</a>
+          <a class="inline-flex items-center gap-2 bg-brand hover:bg-brand-hover text-white text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg shadow-brand/30 transition-all hover:-translate-y-0.5 active:translate-y-0" href="login.html">Login</a>
+        </div>
+      </div>
+    </header>
+    <nav id="mobile-nav" class="lg:hidden hidden bg-[#0E0E12]/95 backdrop-blur-md border-b border-zinc-800">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3 text-sm font-bold uppercase tracking-widest text-zinc-100">
+        <a href="#hero" onclick="toggleMobileNav()">Home</a>
+        <a href="#process" onclick="toggleMobileNav()">Our Process</a>
+        <a href="dashboard.html" onclick="toggleMobileNav()">Dashboard</a>
+        <a href="#community" onclick="toggleMobileNav()">Community</a>
+        <a href="#about" onclick="toggleMobileNav()">About Us</a>
+        <div class="flex gap-3 mt-2">
+          <a href="sign-up.html" class="bg-zinc-800 px-3 py-2 rounded-full text-xs">Sign Up</a>
+          <a href="login.html" class="bg-brand px-3 py-2 rounded-full text-xs">Login</a>
+        </div>
+      </div>
+    </nav>
+    <section class="relative min-h-[70vh] md:min-h-[90vh] flex items-center justify-center text-center overflow-hidden px-4" data-purpose="hero-banner" id="hero">
+      <div class="absolute inset-0 z-0">
+        <img alt="Athletes training" class="w-full h-full object-cover object-center filter brightness-[0.27] contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPmrSEsfxhUE_S5aATRDfcrJ_CygQ5uIBkpFyhlle6WtbT1gQblDPqGB2NZ0LJs9RLVIP3zODVgMdjDGbFD1iVzLLbsTwrdlE0cHtoxymxZKLo7dN5Ih7qTdSMmfxuo7A7_cUtXZy8-xWZHq3cqS9KyhVLTqC2jI0hrpJl5oZU9hFZjyidnfT7LHFifboOCuft0MFOdMixqZNSTNcI8vrCgNSpV27fLWMm8JEdHNm323n_ZQ3ADl8R" />
+        <div class="absolute inset-0 hero-glow">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0C0C0E] via-transparent to-black/60">
+        </div>
+      </div>
+      <div class="relative z-10 max-w-5xl mx-auto px-4 py-20 flex flex-col items-center">
+        <h1 class="font-heading font-black text-2xl sm:text-4xl md:text-6xl lg:text-7xl uppercase tracking-tight text-white leading-[1.05] mb-3 md:mb-6 text-center">
+          <span>Be Ready To</span>
+          <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400 font-extrabold">Become Healthy</span>
+          <br />
+          <span class="text-brand">At Home &amp; Anywhere</span>
+        </h1>
+        <p class="max-w-xl text-xs sm:text-sm md:text-lg text-zinc-300 font-normal leading-relaxed mb-6 md:mb-10">
+          Empowering you with dynamic home workouts, automated daily streak tracking, and precision outdoor GPS route analytics.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto">
+          <a class="bg-brand hover:bg-brand-hover text-white text-xs sm:text-sm uppercase tracking-widest font-extrabold px-8 py-3 md:px-9 md:py-4 rounded-md shadow-xl shadow-brand/30 transition duration-300 transform hover:-translate-y-0.5" href="login.html"><span>Get Started</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 bg-[#111114] border-t border-zinc-800/60 relative" data-purpose="our-process-section" id="process">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="text-center mb-16">
+          <h2 class="font-heading text-3xl sm:text-4xl font-black uppercase tracking-wider text-white">
+            Our Process
+          </h2>
+          <div class="w-16 h-1 bg-brand mx-auto mt-3">
+          </div>
+          <p class="text-sm text-zinc-400 max-w-xl mx-auto mt-4">
+            A proven scientific path from goal formulation to sustainable everyday mastery.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-brand-card border border-brand-cardBorder hover:border-brand/60 rounded-lg p-8 text-center flex flex-col items-center transition-all duration-300 hover:-translate-y-1.5 group">
+            <div class="w-20 h-20 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand mb-6 group-hover:scale-110 group-hover:bg-brand group-hover:text-black transition-all">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-base uppercase text-white tracking-wider mb-2">
+              Analyse Your Goal
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Personal body metrics assessment, BMI, target weight, and lifestyle tailoring with FitAI.
+            </p>
+            <span class="mt-6 text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
+              Phase 01
+            </span>
+          </div>
+          <div class="bg-brand-card border border-brand-cardBorder hover:border-brand/60 rounded-lg p-8 text-center flex flex-col items-center transition-all duration-300 hover:-translate-y-1.5 group">
+            <div class="w-20 h-20 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand mb-6 group-hover:scale-110 group-hover:bg-brand group-hover:text-black transition-all">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-base uppercase text-white tracking-wider mb-2">
+              Work Hard On It
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Follow customized daily video regiments, bodyweight circuits, and guided cardio outside.
+            </p>
+            <span class="mt-6 text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
+              Phase 02
+            </span>
+          </div>
+          <div class="bg-brand-card border border-brand-cardBorder hover:border-brand/60 rounded-lg p-8 text-center flex flex-col items-center transition-all duration-300 hover:-translate-y-1.5 group">
+            <div class="w-20 h-20 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand mb-6 group-hover:scale-110 group-hover:bg-brand group-hover:text-black transition-all">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-base uppercase text-white tracking-wider mb-2">
+              Improve Yourself
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Track outdoor pace with GPS &amp; maintain consecutive streak badges for progressive overload.
+            </p>
+            <span class="mt-6 text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
+              Phase 03
+            </span>
+          </div>
+          <div class="bg-brand-card border border-brand-cardBorder hover:border-brand/60 rounded-lg p-8 text-center flex flex-col items-center transition-all duration-300 hover:-translate-y-1.5 group">
+            <div class="w-20 h-20 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center text-brand mb-6 group-hover:scale-110 group-hover:bg-brand group-hover:text-black transition-all">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                <path d="M12 2l7 7-7 13-7-13 7-7zM5 9h14M12 22V9" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-base uppercase text-white tracking-wider mb-2">
+              Achieve Your Destiny
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Long-term physical vigor, metabolic health, mental sharpness, and a supportive community.
+            </p>
+            <span class="mt-6 text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
+              Phase 04
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 bg-[#161619] border-y border-zinc-800" data-purpose="about-us" id="about">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8">
+        <div class="text-center mb-12"><h2 class="font-heading text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">About Us</h2><div class="w-16 h-1 bg-brand mx-auto mt-4"></div></div>
+        <div class="grid md:grid-cols-2 gap-10 items-center bg-[#1E1E23]/60 rounded-2xl p-8 border border-zinc-800/60">
+          <div class="space-y-4 text-zinc-300 leading-relaxed">
+            <h3 class="text-3xl font-heading font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-brand to-white tracking-tight mb-4">Fit Anywhere. Anytime.</h3>
+            <p class="text-zinc-300 text-sm leading-relaxed">We believe healthy living does not have to be complicated. Work out at home, jog in the park, or just stretch when you feel like it — it all counts, and it is all simple.</p>
+            <div class="flex flex-wrap gap-3 text-sm">
+              <span class="bg-brand/10 text-brand border border-brand/30 px-3 py-1 rounded-full font-semibold">Health Community</span>
+              <span class="bg-brand/10 text-brand border border-brand/30 px-3 py-1 rounded-full font-semibold">GPS Tracking</span>
+              <span class="bg-brand/10 text-brand border border-brand/30 px-3 py-1 rounded-full font-semibold">Daily Streaks</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <img alt="Team training" class="rounded-2xl shadow-xl object-cover w-full h-64 hover:scale-[1.03] transition-transform duration-300" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80&auto=format"/>
+            <img alt="Outdoor fitness" class="rounded-2xl shadow-xl object-cover w-full h-64 hover:scale-[1.03] transition-transform duration-300 mt-10" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80&auto=format"/>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: AboutUsSection -->
+    <footer class="bg-[#08080A] text-zinc-400 text-xs pt-16 pb-12 border-t border-zinc-900" data-purpose="site-footer">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-zinc-800/60">
+          <div class="space-y-4">
+            <div class="flex items-center gap-2.5">
+              <span class="text-xl font-heading font-black tracking-wider text-white">
+                HOME<span class="text-brand">FIT</span>
+              </span>
+            </div>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              The next-generation home and outdoor fitness ecosystem. Daily habits, GPS route performance, and smart AI fitness coaching in one platform.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-heading font-bold text-white uppercase tracking-wider text-xs mb-4">
+              Explore Platform
+            </h4>
+            <ul class="space-y-2.5 text-xs">
+              <li>
+                <a class="hover:text-brand transition text-xs uppercase tracking-widest font-sans text-xs text-zinc-400 " href="#hero">
+                  Home Workouts
+                </a>
+              </li>
+              <li>
+                <a class="hover:text-brand transition text-xs uppercase tracking-widest font-sans text-xs text-zinc-400 " href="#gps-tracker">
+                  Outdoor GPS Route Tracker
+                </a>
+              </li>
+              <li>
+                <a class="hover:text-brand transition text-xs uppercase tracking-widest font-sans text-xs text-zinc-400 " href="#streak">
+                  Daily Habit Streaks (Beruntun)
+                </a>
+              </li>
+              <li>
+                <a class="hover:text-brand transition text-xs uppercase tracking-widest font-sans text-xs text-zinc-400 " href="#ai-coach">
+                  FitAI Virtual Coach
+                </a>
+              </li>
+              <li>
+                <a class="hover:text-brand transition text-xs uppercase tracking-widest font-sans text-xs text-zinc-400 " href="#trainers">
+                  Elite Coaches
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-heading font-bold text-white uppercase tracking-wider text-xs mb-4">
+              Training Regimens
+            </h4>
+            <ul class="space-y-2.5 text-xs">
+              <li>
+                <a class="hover:text-brand transition text-xs uppercase tracking-widest font-sans text-xs text-zinc-400 " href="#">
+                  No-Equipment Calisthenics
+                </a>
+              </li>
+              <li>
+                <a class="hover:text-brand transition text-xs uppercase tracking-widest font-sans text-xs text-zinc-400 " href="#">
+                  Dumbbell Hypertrophy
+                </a>
+              </li>
+              <li>
+                <a class="hover:text-brand transition text-xs uppercase tracking-widest font-sans text-xs text-zinc-400 " href="#">
+                  10K Running Preparation
+                </a>
+              </li>
+              <li>
+                <a class="hover:text-brand transition text-xs uppercase tracking-widest font-sans text-xs text-zinc-400 " href="#">
+                  Flexibility &amp; Core Pilates
+                </a>
+              </li>
+              <li>
+                <a class="hover:text-brand transition text-xs uppercase tracking-widest font-sans text-xs text-zinc-400 " href="#">
+                  Post-Run Recovery Protocols
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500">
+          <div>
+            © 2025 FitHome Fitness Technologies Inc. All rights reserved.
+          </div>
+          <div class="flex space-x-6">
+            <a class="hover:text-zinc-300 transition" href="#">
+              Privacy Policy
+            </a>
+            <a class="hover:text-zinc-300 transition" href="#">
+              Terms of Service
+            </a>
+            <a class="hover:text-zinc-300 transition" href="#">
+              GPS Data Protection
+            </a>
+            <a class="hover:text-zinc-300 transition" href="#">
+              Cookie Preferences
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><title>Pilih Latihan</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-[#0C0C0E] text-zinc-100 p-6">
+<section id="pilih"><h2 class="font-heading text-4xl font-black uppercase text-white mb-10 text-center">Pilih Latihan</h2>
+<div class="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
+<!-- Buttons copied from dashboard -->
+<div><button onclick="document.getElementById('jenis').value='Arm';">Arm</button><button onclick="document.getElementById('jenis').value='Back';">Back</button><button onclick="document.getElementById('jenis').value='Chest';">Chest</button><button onclick="document.getElementById('jenis').value='Leg';">Leg</button><button onclick="document.getElementById('jenis').value='Cardio';">Cardio</button></div>
+<input type="hidden" id="jenis" value="Arm"><button onclick="alert('Memulai: '+document.getElementById('jenis').value);">Mulai Latihan</button>
+</div></section>
+<script src="script.js"></script></body></html>

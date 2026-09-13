@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Login - Homefit</title><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"/></head>
+<body class="bg-[#0C0C0E] text-zinc-100 font-[Inter] min-h-screen flex items-center justify-center p-6">
+<div class="w-full max-w-md bg-[#161619] border border-zinc-800 rounded-3xl p-8 sm:p-10 shadow-2xl">
+  <div class="text-center mb-8"><h1 class="text-3xl font-black tracking-tight text-white">HOME<span class="text-brand">FIT</span></h1><p class="text-xs text-zinc-400 uppercase tracking-widest mt-1">Masuk ke akunmu</p></div>
+  <form class="space-y-4" onsubmit="event.preventDefault(); alert('Login berhasil (simulasi)'); window.location.href='index.html';">
+    <div><label for="email" class="block text-xs font-bold uppercase text-zinc-400 mb-1">Email</label><input id="email" type="email" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand text-white placeholder-zinc-500" placeholder="you@example.com" required/></div>
+    <div><label for="pass" class="block text-xs font-bold uppercase text-zinc-400 mb-1">Sandi</label><input id="pass" type="password" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand text-white placeholder-zinc-500" placeholder="••••••••" required/></div>
+    <button type="submit" class="w-full bg-brand hover:bg-brand-hover text-white font-extrabold uppercase tracking-widest py-3.5 rounded-lg shadow-lg shadow-brand/20 transition">Masuk</button>
+  </form>
+  <div class="text-center text-xs text-zinc-500 mt-6">Belum punya akun? <a href="sign-up.html" class="text-brand hover:underline" style="color:#FF5E1E">Daftar</a></div>
+</div>
+</body></html>
