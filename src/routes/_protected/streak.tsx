@@ -1,4 +1,6 @@
+import React from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
+// @ts-ignore
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { streakKeys } from '../../lib/query'
 import { api } from '../../lib/treaty'

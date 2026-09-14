@@ -1,13 +1,1060 @@
 <!doctype html>
-<html lang="id">
-  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Dashboard — FitHome</title><link rel="stylesheet" href="dashboard.css"><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={theme:{extend:{colors:{brand:{DEFAULT:'#FF5E1E',hover:'#E04D13',glow:'#FF7A42',dark:'#0C0C0E',card:'#161619',cardBorder:'#28282E',surface:'#1E1E23'}}}}}</script><style>@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.anim-fade{animation:fadeUp .7s ease-out both}@keyframes hueRotate{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}.nav-wheel:hover{color:#FF5E1E;filter:brightness(1.2) drop-shadow(0 0 6px rgba(255,94,30,.6));transition:color .3s ease}</style></head>
-    <body class="bg-[#0C0C0E] text-[#e4e4e7] font-sans antialiased">
-      <!-- <script>if(!localStorage.getItem('fituser')){window.location.href='login.html';}</script> -->
-      <!-- Aktifkan saat diperlukan: <script src="auth-guard.js"></script> -->
-      <header class="sticky top-0 z-40 glass-nav bg-[#0E0E12]/90 backdrop-blur-md border-b border-zinc-800/60 h-20 flex items-center justify-between px-6 lg:px-10" data-purpose="primary-navigation"><a href="index.html" class="font-heading text-2xl font-black tracking-wider text-white">HOME<span class="text-brand">FIT</span></a><nav class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-zinc-100 absolute left-1/2 -translate-x-1/2 items-center"><a href="index.html#hero" class="hover:text-brand transition-colors nav-wheel">Beranda</a><a href="index.html#process" class="hover:text-brand transition-colors nav-wheel">Our Process</a><a href="#profile" class="hover:text-brand transition-colors nav-wheel">Dashboard</a><a href="index.html#community" class="hover:text-brand transition-colors nav-wheel">Community</a><a href="index.html#about" class="hover:text-brand transition-colors nav-wheel">About Us</a></nav></header>
-        <main class="max-w-7xl mx-auto px-6 py-16 space-y-24" id="dashboard">
-            <section id="profile" class="max-w-2xl mx-auto mb-2 scroll-mt-24Up"><div class="card-dark rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-center gap-8 shadow-2xl border border-zinc-800/60 relative overflow-hidden"><div class="absolute -top-10 -right-10 w-40 h-40 bg-brand/10 rounded-full blur-3xl"></div><img alt="Profile" class="w-28 h-28 rounded-full object-cover ring-4 ring-brand/30 shadow-2xl relative z-10" src="https://api.dicebear.com/7.x/avataaars/svg?seed=FitUser"/><div class="text-center sm:text-left relative z-10"><h3 class="font-heading text-3xl font-black text-white mb-2">FitUser</h3><div class="flex flex-wrap justify-center sm:justify-start gap-2 mb-4"><span class="px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-extrabold border border-brand/20">Level Menengah</span><span class="px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-extrabold border border-brand/20">12 Hari Streak</span></div><div class="flex gap-3 justify-center sm:justify-start"><a class="bg-brand hover:bg-brand-hover text-white font-extrabold px-6 py-2.5 rounded-xl text-sm transition shadow-lg shadow-brand/20" href="#">Edit Profil</a><a class="border border-zinc-700 hover:border-brand text-zinc-300 hover:text-white font-extrabold px-6 py-2.5 rounded-xl text-sm transition" href="#">Riwayat</a></div></div></div></section>
-              <section id="latihan"><h2 class="font-heading text-4xl sm:text-5xl font-black uppercase tracking-tight text-white mb-4 text-center">Daftar Latihan</h2><div class="w-24 h-1 bg-brand mx-auto rounded-full mb-12"></div><div class="grid md:grid-cols-3 gap-8"><div class="card-dark rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-2 transition duration-300 border border-zinc-800/60 shadow-xl"><div class="absolute top-0 right-0 w-24 h-24 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/3 blur-2xl"></div><h3 class="font-heading text-2xl font-black text-white mb-2">No-Equipment Calisthenics</h3><div class="inline-block px-3 py-1 rounded-full bg-brand/20 text-brand text-xs font-bold mb-4">15 MENIT</div><p class="text-zinc-300 text-sm leading-relaxed">Push-up, squat, plank. Cocok di rumah tanpa peralatan.</p></div><div class="card-dark rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-2 transition duration-300 border border-zinc-800/60 shadow-xl"><div class="absolute top-0 right-0 w-24 h-24 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/3 blur-2xl"></div><h3 class="font-heading text-2xl font-black text-white mb-2">Dumbbell Hypertrophy</h3><div class="inline-block px-3 py-1 rounded-full bg-brand/20 text-brand text-xs font-bold mb-4">PROGRESIF</div><p class="text-zinc-300 text-sm leading-relaxed">Biceps curl, row, overhead press. Gaya progresif untuk pertumbuhan otot.</p></div><div class="card-dark rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-2 transition duration-300 border border-zinc-800/60 shadow-xl"><div class="absolute top-0 right-0 w-24 h-24 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/3 blur-2xl"></div><h3 class="font-heading text-2xl font-black text-white mb-2">10K Running Prep</h3><div class="inline-block px-3 py-1 rounded-full bg-brand/20 text-brand text-xs font-bold mb-4">ENDURANCE</div><p class="text-zinc-300 text-sm leading-relaxed">Interval lari, pacing, dan endurance build-up untuk persiapan 10K.</p></div></div></section>
-                <section id="gps" class="border-y border-zinc-800/60 py-16"><h2 class="font-heading text-4xl font-black uppercase tracking-tight text-white mb-10">GPS Tracker & Lokasi</h2><div class="grid md:grid-cols-2 gap-6"><div class="card-dark p-8 rounded-3xl border border-zinc-800/60 shadow-xl relative overflow-hidden group hover:-translate-y-1 transition duration-300"><div class="absolute top-0 right-0 w-20 h-20 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/3 blur-2xl"></div><h4 class="font-heading text-lg font-black text-white mb-3">Track Lari Outdoor</h4><p class="text-sm text-zinc-400">Gunakan GPS untuk analisis rute, kecepatan, dan kalori terbakar secara real-time.</p></div><div class="card-dark p-8"><h4 class="font-heading text-lg font-black text-white mb-3">Gym Terdekat</h4><p class="text-sm text-zinc-400">Temukan peralatan gym dan stadion terdekat berdasarkan lokasi Anda saat ini.</p></div></div></section>
-                  <section id="ai"><h2 class="font-heading text-4xl font-black uppercase tracking-tight text-white mb-6 text-center">Chatbox AI</h2><div class="card-dark rounded-3xl p-6 shadow-2xl max-w-3xl mx-auto"><div class="h-64 overflow-y-auto chat-scroll space-y-3 mb-4" id="chat-body"><div class="flex gap-3"><div class="w-8 h-8 rounded-full bg-brand text-white flex items-center justify-center text-xs font-bold">AI</div><div class="bg-zinc-800/80 border border-zinc-700/60 rounded-2xl p-3 text-xs text-zinc-200">Halo! Saya Health Community. Tanyakan latihan, nutrisi, atau streak Anda!</div></div></div><form id="chat-form" class="flex gap-2"><input id="chat-in" class="bg-zinc-900 border border-zinc-700 text-white text-sm px-4 py-3 rounded-xl flex-1 focus:outline-none focus:border-brand" placeholder="Tanyakan sesuatu..." type="text"/><button class="bg-brand hover:bg-brand-hover text-white font-extrabold px-5 py-3 rounded-xl transition" type="submit">Kirim</button></form><script>document.getElementById('chat-form').addEventListener('submit',function(e){e.preventDefault();const b=document.getElementById('chat-body');const i=document.getElementById('chat-in');if(i.value.trim()){const u=document.createElement('div');u.className='flex justify-end';u.innerHTML='<div class="bg-brand text-white rounded-2xl p-3 text-xs max-w-md">'+i.value+'</div>';b.appendChild(u);i.value='';setTimeout(function(){const bot=document.createElement('div');bot.className='flex gap-3';bot.innerHTML='<div class="w-8 h-8 rounded-full bg-brand/20 text-brand flex items-center justify-center text-xs font-bold">AI</div><div class="bg-zinc-800/80 border border-zinc-700/60 rounded-2xl p-3 text-xs text-zinc-200">Oke! Saya akan bantu rencanakan latihan sesuai kondisi Anda.</div>';b.appendChild(bot);b.scrollTop=b.scrollHeight;},700);}});</script></div></section>
-                  </main></body></html>
+
+<html class="dark" lang="en">
+  <head>
+    <style>.font-heading{font-family:'Montserrat',system-ui,sans-serif}</style>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          background-color: #0b0d11;
+        }
+        body {
+          overscroll-behavior: none;
+          font-family: "Inter", sans-serif;
+        }
+        h1,
+        h2,
+        h3,
+        .font-heading {
+          font-family: "Plus Jakarta Sans", sans-serif;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              bg: "#0b0d11",
+              panel: "#12151b",
+              "panel-elevated": "#171b23",
+              "panel-subtle": "#0e1116",
+              border: "#1e222a",
+              "border-light": "#292f3b",
+              accent: "#e5e7eb",
+              "accent-muted": "#10b981",
+              "accent-subtle": "#064e3b",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-[#0C0C0E] text-zinc-100 antialiased selection:bg-[#1E1E23] selection:text-white min-h-screen"
+  >
+    <!-- Main Canvas Container -->
+    <div class="pl-0">
+      <!-- Clean Minimal Header -->
+      <header
+        class="h-16 border-b border-zinc-800/60 bg-[#0C0C0E]/85 backdrop-blur-md sticky top-0 z-40 flex items-center justify-between px-10"
+      >
+        <a href="#" class="flex items-center gap-2 group">
+          <div class="text-2xl font-heading font-black tracking-wider text-white">HOME<span class="text-[#FF5E1E]">FIT</span></div>
+        </a>
+        <div class="flex items-center gap-6">
+          <button
+            aria-label="Notifikasi"
+            class="text-zinc-400 hover:text-zinc-100 transition-colors p-1.5 rounded-lg hover:bg-[#1E1E23]/40"
+            type="button"
+          >
+            <span class="material-symbols-outlined text-xl">notifications</span>
+          </button>
+          <div class="flex items-center gap-3 pl-4 border-l border-zinc-800/60">
+            <img
+              alt="Foto Profil Rian"
+              class="w-8 h-8 rounded-full object-cover ring-1 ring-white/10"
+              src="https://api.dicebear.com/7.x/identicon/svg?seed=default"
+            />
+            <span class="text-xs font-semibold text-zinc-100 tracking-wide"
+              >Rian Pratama</span
+            >
+          </div>
+        </div>
+      </header>
+      <!-- Content Workspace: Generous vertical rhythm (gap-10) with scannable structure -->
+      <main class="py-10 px-10 max-w-full w-full mx-0 flex flex-col gap-10">
+        <!-- 1. Spacious Profile Header -->
+        <section
+          class="bg-[#12151b] border border-[#1e222a] rounded-2xl p-8 transition-shadow mx-auto max-w-4xl"
+        >
+          <div
+            class="flex flex-col lg:flex-row lg:items-center justify-between gap-8"
+          >
+            <!-- Left: Distinct Avatar + User Identity Details -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-7 w-full">
+              <div class="relative group shrink-0">
+                <img
+                  alt="Rian Pratama"
+                  class="w-24 h-24 rounded-2xl object-cover ring-1 ring-white/10 shadow-md"
+                  src="https://api.dicebear.com/7.x/identicon/svg?seed=default"
+                />
+                <button
+                  aria-label="Ganti Avatar"
+                  class="absolute -bottom-1.5 -right-1.5 bg-[#1a1e27] hover:bg-[#161619] text-zinc-300 p-2 rounded-full border border-slate-700 shadow transition-colors"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-xs">edit</span>
+                </button>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <div class="flex items-center gap-3 flex-wrap">
+                  <input
+                    class="bg-transparent text-xl font-bold text-white font-heading focus:bg-[#181c24] px-1.5 py-0.5 rounded-lg outline-none border border-transparent focus:border-[#2d3342] transition-colors"
+                    id="profile-name-input"
+                    type="text"
+                    value="Rian Pratama"
+                  />
+                  <span
+                    class="text-[11px] font-semibold text-[#FF5E1E] bg-[#FF5E1E]/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-md uppercase tracking-wider"
+                    >Pro Athlete</span
+                  >
+                </div>
+                <p class="text-xs text-zinc-400 font-medium tracking-wide">
+                  @rian.fit
+                </p>
+                <input
+                  class="bg-transparent text-sm text-zinc-400 focus:bg-[#181c24] focus:text-zinc-100 px-1.5 py-1 rounded-lg outline-none border border-transparent focus:border-[#2d3342] transition-colors w-full sm:w-[28rem] mt-1"
+                  id="profile-bio-input"
+                  type="text"
+                  value="Hipertrofi &amp; progresif overload • Target: 75kg lean mass"
+                />
+              </div>
+            </div>
+            <!-- Right: Roomy Quick Metrics & Action -->
+            <div
+              class="flex items-center justify-between lg:justify-end gap-8 pt-6 lg:pt-0 border-t lg:border-t-0 border-[#1c2028]"
+            >
+              <div class="flex items-center gap-8 pr-2">
+                <div class="text-left">
+                  <div
+                    class="text-3xl font-extrabold text-white font-heading tracking-tight"
+                  >
+                    142
+                  </div>
+                  <div class="text-xs text-zinc-400 mt-1 font-medium">
+                    Sesi Latihan
+                  </div>
+                </div>
+                <div class="h-10 w-px bg-[#202530]"></div>
+                <div class="text-left">
+                  <div
+                    class="text-3xl font-extrabold text-white font-heading tracking-tight"
+                  >
+                    95%
+                  </div>
+                  <div class="text-xs text-zinc-400 mt-1 font-medium">
+                    Konsistensi
+                  </div>
+                </div>
+              </div>
+              <button
+                class="px-5 py-2.5 bg-white text-zinc-900 hover:bg-[#161619] text-xs font-semibold rounded-xl transition-all shadow-sm flex items-center gap-2"
+            <iframe src="/_protected/profile" class="w-full h-64 rounded-2xl border border-zinc-800/60 bg-[#161619]" title="Profile"></iframe>
+            </div>
+          </div>
+        </section>
+        <!-- 2. Dual Section: Streak & GPS Tracker with Wide Gap -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <!-- Streak Card (7 cols) -->
+          <section
+            class="lg:col-span-7 bg-[#12151b] border border-[#1e222a] rounded-2xl p-7 flex flex-col justify-between gap-6"
+          >
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-8 h-8 rounded-lg bg-[#1c212b] border border-[#262c3a] flex items-center justify-center text-amber-400"
+                >
+                  <span class="material-symbols-outlined text-lg"
+                    >local_fire_department</span
+                  >
+                </div>
+                <div>
+                  <span
+                    class="text-base font-bold text-white font-heading block"
+                    >18 Hari Berturut-turut</span
+                  >
+                  <span class="text-xs text-zinc-400 font-medium"
+                    >Konsistensi latihan mingguan</span
+                  >
+                </div>
+              </div>
+              <span
+                class="text-xs font-semibold text-zinc-400 bg-[#161a22] border border-[#222734] px-3 py-1 rounded-full"
+                >Target: 30 Hari</span
+              >
+              <a href="/streak" class="ml-3 inline-flex items-center gap-2 bg-brand hover:bg-brand-hover text-white text-xs font-extrabold px-3 py-1.5 rounded-lg transition">Streak System / Claim</a>
+            </div>
+            <!-- 7-Day Week Row with Generous Spacing -->
+            <div class="grid grid-cols-7 gap-3 my-2">
+              <div
+                class="flex flex-col items-center gap-2 py-3 px-1 rounded-xl bg-[#151922] border border-[#1e2330]"
+              >
+                <span class="text-xs text-zinc-400 font-medium">Sen</span>
+                <span
+                  class="material-symbols-outlined text-[#FF5E1E] text-base font-bold"
+                  >done</span
+                >
+                <span class="text-[11px] text-zinc-400 font-medium">Legs</span>
+              </div>
+              <div
+                class="flex flex-col items-center gap-2 py-3 px-1 rounded-xl bg-[#151922] border border-[#1e2330]"
+              >
+                <span class="text-xs text-zinc-400 font-medium">Sel</span>
+                <span
+                  class="material-symbols-outlined text-[#FF5E1E] text-base font-bold"
+                  >done</span
+                >
+                <span class="text-[11px] text-zinc-400 font-medium">Push</span>
+              </div>
+              <div
+                class="flex flex-col items-center gap-2 py-3 px-1 rounded-xl bg-[#151922] border border-[#1e2330]"
+              >
+                <span class="text-xs text-zinc-400 font-medium">Rab</span>
+                <span
+                  class="material-symbols-outlined text-[#FF5E1E] text-base font-bold"
+                  >done</span
+                >
+                <span class="text-[11px] text-zinc-400 font-medium">Pull</span>
+              </div>
+              <div
+                class="flex flex-col items-center gap-2 py-3 px-1 rounded-xl bg-[#151922] border border-[#1e2330]"
+              >
+                <span class="text-xs text-zinc-400 font-medium">Kam</span>
+                <span
+                  class="material-symbols-outlined text-[#FF5E1E] text-base font-bold"
+                  >done</span
+                >
+                <span class="text-[11px] text-zinc-400 font-medium"
+                  >Kardio</span
+                >
+              </div>
+              <div
+                class="flex flex-col items-center gap-2 py-3 px-1 rounded-xl bg-[#1e2430] border border-slate-600 ring-1 ring-white/10"
+              >
+                <span class="text-xs text-white font-semibold">Jum</span>
+                <div
+                  class="w-5 h-5 rounded-full bg-white text-zinc-900 flex items-center justify-center text-[11px] font-extrabold shadow"
+                >
+                  •
+                </div>
+                <span class="text-[11px] text-[#FF5E1E] font-semibold"
+                  >Hari Ini</span
+                >
+              </div>
+              <div
+                class="flex flex-col items-center gap-2 py-3 px-1 rounded-xl bg-[#12151b] border border-[#1c202a] text-zinc-400"
+              >
+                <span class="text-xs font-medium">Sab</span>
+                <span class="text-xs font-semibold text-zinc-400">21</span>
+                <span class="text-[11px] text-zinc-500">Core</span>
+              </div>
+              <div
+                class="flex flex-col items-center gap-2 py-3 px-1 rounded-xl bg-[#12151b] border border-[#1c202a] text-zinc-400"
+              >
+                <span class="text-xs font-medium">Min</span>
+                <span class="text-xs font-semibold text-zinc-400">22</span>
+                <span class="text-[11px] text-zinc-500">Rest</span>
+              </div>
+            </div>
+            <!-- Minimal Progress Footer with Clear Separation -->
+            <div
+              class="flex items-center justify-between text-xs pt-4 border-t border-zinc-800/60"
+            >
+              <span class="text-zinc-400 font-medium"
+                >Platinum Milestone (<span class="text-white font-semibold"
+                  >18/21 hari</span
+                >)</span
+              >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-36 h-1.5 bg-[#1e232e] rounded-full overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-[#FF5E1E]/20 rounded-full"
+                    style="width: 85%"
+                  ></div>
+                </div>
+                <span class="text-[11px] font-semibold text-zinc-300"
+                  >85%</span
+                >
+              </div>
+            </div>
+          </section>
+          <!-- Minimal GPS Tracker (5 cols) -->
+          <section
+            class="lg:col-span-5 bg-[#12151b] border border-[#1e222a] rounded-2xl p-7 flex flex-col justify-between gap-6"
+          >
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-base font-bold text-white font-heading block"
+                  >Aktivitas Luar Ruang</span
+                >
+                <span class="text-xs text-zinc-400 font-medium"
+                  >Sesi Lari Pagi Terakhir</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-2 text-xs font-semibold text-[#FF5E1E] bg-[#FF5E1E]/10 border border-emerald-500/20 px-3 py-1 rounded-full"
+              >
+                <span
+                  class="w-2 h-2 rounded-full bg-[#FF5E1E]/20 shadow-[0_0_6px_rgba(52,211,153,0.6)]"
+                ></span>
+                GPS Aktif
+              </div>
+            </div>
+            <!-- Subtle Clean Vector Map with Roomy Height -->
+            <div
+              class="w-full h-28 bg-[#0e1116] border border-[#1b2029] rounded-xl relative overflow-hidden flex items-center justify-center p-2"
+            >
+              <svg
+                class="w-full h-full"
+                preserveaspectratio="none"
+                viewbox="0 0 300 80"
+              >
+                <path
+                  d="M 0 25 L 300 25 M 0 55 L 300 55 M 75 0 L 75 80 M 225 0 L 225 80"
+                  stroke="#171b23"
+                  stroke-width="1"
+                ></path>
+                <path
+                  d="M 20 65 Q 90 15, 160 50 T 280 25"
+                  fill="none"
+                  stroke="#262d3d"
+                  stroke-linecap="round"
+                  stroke-width="3"
+                ></path>
+                <path
+                  d="M 20 65 Q 90 15, 160 50 T 230 35"
+                  fill="none"
+                  stroke="#FF5E1E"
+                  stroke-linecap="round"
+                  stroke-width="2.5"
+                ></path>
+                <circle
+                  cx="230"
+                  cy="35"
+                  fill="#FF5E1E"
+                  r="4.5"
+                  stroke="#1d4ed8"
+                  stroke-width="1.5"
+                ></circle>
+              </svg>
+              <div
+                class="absolute bottom-2.5 left-3.5 flex items-center gap-1.5 text-[11px] text-zinc-400 bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm"
+              >
+                <span class="material-symbols-outlined text-xs text-zinc-400"
+                  >near_me</span
+                >
+                <span>Epicentrum Loop</span>
+              </div>
+            </div>
+            <!-- Concise Structured Metrics in High Scannability Columns -->
+            <div
+              class="grid grid-cols-3 gap-4 text-center pt-3 border-t border-zinc-800/60"
+            >
+              <div
+                class="bg-[#151922] py-2.5 rounded-xl border border-[#1e2330]"
+              >
+                <div
+                  class="text-[11px] text-zinc-400 uppercase tracking-wider font-semibold"
+                >
+                  Jarak
+                </div>
+                <div class="text-base font-bold text-white font-heading mt-0.5">
+                  5.8 km
+                </div>
+              </div>
+              <div
+                class="bg-[#151922] py-2.5 rounded-xl border border-[#1e2330]"
+              >
+                <div
+                  class="text-[11px] text-zinc-400 uppercase tracking-wider font-semibold"
+                >
+                  Waktu
+                </div>
+                <div class="text-base font-bold text-white font-heading mt-0.5">
+                  42:15
+                </div>
+              </div>
+              <div
+                class="bg-[#151922] py-2.5 rounded-xl border border-[#1e2330]"
+              >
+                <div
+                  class="text-[11px] text-zinc-400 uppercase tracking-wider font-semibold"
+                >
+                  Pace
+                </div>
+                <div
+                  class="text-base font-bold text-zinc-100 font-heading mt-0.5"
+                >
+                  5:12 /km
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- 3. Workout Catalog with Generous Filter Space & Wide Card Grid (gap-6) -->
+        <section
+          class="bg-[#12151b] border border-[#1e222a] rounded-2xl p-8 flex flex-col gap-8"
+        >
+          <!-- Section Header & Filter Controls with Clean Separation -->
+          <div
+            class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-2 border-b border-zinc-800/60"
+          >
+            <div>
+              <h2
+                class="text-lg font-bold text-white font-heading tracking-tight"
+              >
+                Pilihan Latihan
+              </h2>
+              <p class="text-xs text-zinc-400 mt-1 font-medium">
+                Pilih fokus kelompok otot dan intensitas latihan hari ini
+              </p>
+            </div>
+            <!-- Level Segmented Filter -->
+            <div
+              class="flex items-center gap-1.5 p-1 bg-[#0e1116] border border-[#1e2330] rounded-xl self-start md:self-auto"
+              id="difficulty-filters"
+            >
+              <button
+                class="filter-chip-diff px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#222734] text-white shadow-sm transition-all"
+                data-diff="all"
+                type="button"
+              >
+                Semua
+              </button>
+              <button
+                class="filter-chip-diff px-3.5 py-1.5 rounded-lg text-xs font-semibold text-zinc-400 hover:text-zinc-100 transition-all"
+                data-diff="mudah"
+                type="button"
+              >
+                Mudah
+              </button>
+              <button
+                class="filter-chip-diff px-3.5 py-1.5 rounded-lg text-xs font-semibold text-zinc-400 hover:text-zinc-100 transition-all"
+                data-diff="menengah"
+                type="button"
+              >
+                Menengah
+              </button>
+              <button
+                class="filter-chip-diff px-3.5 py-1.5 rounded-lg text-xs font-semibold text-zinc-400 hover:text-zinc-100 transition-all"
+                data-diff="sulit"
+                type="button"
+              >
+                Sulit
+              </button>
+            </div>
+          </div>
+          <!-- Muscle Category Tabs with Distinct Margins -->
+          <div
+            class="flex items-center gap-2.5 overflow-x-auto pb-1"
+            id="muscle-filters"
+          >
+            <button
+              class="filter-chip-muscle px-4 py-2 rounded-xl text-xs font-semibold bg-white text-zinc-900 shadow transition-colors"
+              data-group="chest"
+              type="button"
+            >
+              Chest
+            </button>
+            <button
+              class="filter-chip-muscle px-4 py-2 rounded-xl text-xs font-semibold bg-[#161a23] border border-[#222734] text-zinc-400 hover:text-zinc-100 hover:bg-[#1c2230] transition-colors"
+              data-group="arm"
+              type="button"
+            >
+              Arm
+            </button>
+            <button
+              class="filter-chip-muscle px-4 py-2 rounded-xl text-xs font-semibold bg-[#161a23] border border-[#222734] text-zinc-400 hover:text-zinc-100 hover:bg-[#1c2230] transition-colors"
+              data-group="back"
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              class="filter-chip-muscle px-4 py-2 rounded-xl text-xs font-semibold bg-[#161a23] border border-[#222734] text-zinc-400 hover:text-zinc-100 hover:bg-[#1c2230] transition-colors"
+              data-group="leg"
+              type="button"
+            >
+              Leg
+            </button>
+            <button
+              class="filter-chip-muscle px-4 py-2 rounded-xl text-xs font-semibold bg-[#161a23] border border-[#222734] text-zinc-400 hover:text-zinc-100 hover:bg-[#1c2230] transition-colors"
+              data-group="cardio"
+              type="button"
+            >
+              Cardio
+            </button>
+          </div>
+          <!-- Roomy Workout Cards Grid (gap-6) -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            id="workout-card-container"
+          >
+            <!-- Card 1 -->
+            <div
+              class="workout-card bg-[#151922] border border-[#202532] hover:border-slate-500 rounded-2xl p-5 flex flex-col justify-between transition-all duration-200 hover:shadow-lg"
+              data-level="menengah"
+              data-muscle="chest"
+            >
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between text-xs">
+                  <span
+                    class="text-[11px] font-semibold text-[#FF5E1E] bg-[#FF5E1E]/10 px-2 py-0.5 rounded"
+                    >Menengah</span
+                  >
+                  <span class="text-xs text-zinc-400 font-medium"
+                    >~340 kcal</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    class="text-sm font-bold text-white font-heading leading-snug"
+                  >
+                    Incline Dumbbell Press
+                  </h3>
+                  <div
+                    class="mt-4 text-xs text-zinc-400 space-y-2.5 pt-3 border-t border-[#1d222e]"
+                  >
+                    <div class="flex justify-between items-center">
+                      <span class="text-zinc-400">Set &amp; Reps</span>
+                      <span class="text-white font-semibold">4 × 10</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-zinc-400">Istirahat</span>
+                      <span class="text-white font-semibold">2 mnt</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="mt-6 w-full py-2.5 bg-[#1e2430] hover:bg-[#161619] text-zinc-100 hover:text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-1.5"
+                type="button"
+              >
+                <span>Mulai Latihan</span>
+                <span class="material-symbols-outlined text-sm"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="workout-card bg-[#151922] border border-[#202532] hover:border-slate-500 rounded-2xl p-5 flex flex-col justify-between transition-all duration-200 hover:shadow-lg"
+              data-level="menengah"
+              data-muscle="arm"
+            >
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between text-xs">
+                  <span
+                    class="text-[11px] font-semibold text-[#FF5E1E] bg-[#FF5E1E]/10 px-2 py-0.5 rounded"
+                    >Menengah</span
+                  >
+                  <span class="text-xs text-zinc-400 font-medium"
+                    >~290 kcal</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    class="text-sm font-bold text-white font-heading leading-snug"
+                  >
+                    EZ-Bar Bicep Curl
+                  </h3>
+                  <div
+                    class="mt-4 text-xs text-zinc-400 space-y-2.5 pt-3 border-t border-[#1d222e]"
+                  >
+                    <div class="flex justify-between items-center">
+                      <span class="text-zinc-400">Set &amp; Reps</span>
+                      <span class="text-white font-semibold">3 × 12</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-zinc-400">Istirahat</span>
+                      <span class="text-white font-semibold">90 dtk</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="mt-6 w-full py-2.5 bg-[#1e2430] hover:bg-[#161619] text-zinc-100 hover:text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-1.5"
+                type="button"
+              >
+                <span>Mulai Latihan</span>
+                <span class="material-symbols-outlined text-sm"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="workout-card bg-[#151922] border border-[#202532] hover:border-slate-500 rounded-2xl p-5 flex flex-col justify-between transition-all duration-200 hover:shadow-lg"
+              data-level="sulit"
+              data-muscle="chest"
+            >
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between text-xs">
+                  <span
+                    class="text-[11px] font-semibold text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded"
+                    >Sulit</span
+                  >
+                  <span class="text-xs text-zinc-400 font-medium"
+                    >~390 kcal</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    class="text-sm font-bold text-white font-heading leading-snug"
+                  >
+                    Weighted Dips
+                  </h3>
+                  <div
+                    class="mt-4 text-xs text-zinc-400 space-y-2.5 pt-3 border-t border-[#1d222e]"
+                  >
+                    <div class="flex justify-between items-center">
+                      <span class="text-zinc-400">Set &amp; Reps</span>
+                      <span class="text-white font-semibold">3 × Failure</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-zinc-400">Istirahat</span>
+                      <span class="text-white font-semibold">2 mnt</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="mt-6 w-full py-2.5 bg-[#1e2430] hover:bg-[#161619] text-zinc-100 hover:text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-1.5"
+                type="button"
+              >
+                <span>Mulai Latihan</span>
+                <span class="material-symbols-outlined text-sm"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+            <!-- Card 4 -->
+            <div
+              class="workout-card bg-[#151922] border border-[#202532] hover:border-slate-500 rounded-2xl p-5 flex flex-col justify-between transition-all duration-200 hover:shadow-lg"
+              data-level="menengah"
+              data-muscle="cardio"
+            >
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between text-xs">
+                  <span
+                    class="text-[11px] font-semibold text-[#FF5E1E] bg-[#FF5E1E]/10 px-2 py-0.5 rounded"
+                    >Menengah</span
+                  >
+                  <span class="text-xs text-zinc-400 font-medium"
+                    >~310 kcal</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    class="text-sm font-bold text-white font-heading leading-snug"
+                  >
+                    Treadmill Incline HIIT
+                  </h3>
+                  <div
+                    class="mt-4 text-xs text-zinc-400 space-y-2.5 pt-3 border-t border-[#1d222e]"
+                  >
+                    <div class="flex justify-between items-center">
+                      <span class="text-zinc-400">Durasi</span>
+                      <span class="text-white font-semibold">20 mnt</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-zinc-400">Incline</span>
+                      <span class="text-white font-semibold">12%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="mt-6 w-full py-2.5 bg-[#1e2430] hover:bg-[#161619] text-zinc-100 hover:text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-1.5"
+                type="button"
+              >
+                <span>Mulai Latihan</span>
+                <span class="material-symbols-outlined text-sm"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- 4. Real-time Equipment Availability: Clean, Renggang 5-Column Grid -->
+        <section
+          class="bg-[#12151b] border border-[#1e222a] rounded-2xl p-7 flex flex-col gap-6"
+        >
+          <div
+            class="flex items-center justify-between pb-3 border-b border-zinc-800/60"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-8 h-8 rounded-lg bg-[#1c212b] border border-[#262c3a] flex items-center justify-center text-zinc-300"
+              >
+                <span class="material-symbols-outlined text-lg">sensors</span>
+              </div>
+              <div>
+                <span class="text-base font-bold text-white font-heading block"
+                  >Ketersediaan Alat</span
+                >
+                <span class="text-xs text-zinc-400 font-medium"
+                  >Volt Gym Kuningan Studio</span
+                >
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span
+                class="text-xs font-semibold text-zinc-300 bg-[#171b23] border border-[#222734] px-3 py-1 rounded-full"
+                >42% Kapasitas Terpakai</span
+              >
+            </div>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            <!-- Item 1 -->
+            <div
+              class="bg-[#151922] border border-[#1f2431] hover:border-slate-600 p-4 rounded-xl flex flex-col gap-3 transition-colors"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-zinc-100 font-heading"
+                  >Smith Machine</span
+                >
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-[#FF5E1E]/20 shadow-[0_0_6px_rgba(52,211,153,0.5)]"
+                ></span>
+              </div>
+              <div class="text-xs text-zinc-400 font-medium">
+                3 / 4 Tersedia
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div
+              class="bg-[#151922] border border-[#1f2431] hover:border-slate-600 p-4 rounded-xl flex flex-col gap-3 transition-colors"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-zinc-100 font-heading"
+                  >Power Rack</span
+                >
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_6px_rgba(251,191,36,0.5)]"
+                ></span>
+              </div>
+              <div class="text-xs text-zinc-400 font-medium">
+                1 / 3 Tersedia
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div
+              class="bg-[#151922] border border-[#1f2431] hover:border-slate-600 p-4 rounded-xl flex flex-col gap-3 transition-colors"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-zinc-100 font-heading"
+                  >Dumbbell 12-40kg</span
+                >
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-[#FF5E1E]/20 shadow-[0_0_6px_rgba(52,211,153,0.5)]"
+                ></span>
+              </div>
+              <div class="text-xs text-zinc-400 font-medium">
+                Lengkap di Rak
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div
+              class="bg-[#151922] border border-[#1f2431] hover:border-slate-600 p-4 rounded-xl flex flex-col gap-3 transition-colors"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-zinc-100 font-heading"
+                  >Cable Crossover</span
+                >
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-[#FF5E1E]/20 shadow-[0_0_6px_rgba(52,211,153,0.5)]"
+                ></span>
+              </div>
+              <div class="text-xs text-zinc-400 font-medium">
+                2 / 2 Tersedia
+              </div>
+            </div>
+            <!-- Item 5 -->
+            <div
+              class="bg-[#151922] border border-[#1f2431] hover:border-slate-600 p-4 rounded-xl flex flex-col gap-3 transition-colors"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-zinc-100 font-heading"
+                  >Treadmill Pro</span
+                >
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-[#FF5E1E]/20 shadow-[0_0_6px_rgba(52,211,153,0.5)]"
+                ></span>
+              </div>
+              <div class="text-xs text-zinc-400 font-medium">
+                5 / 8 Tersedia
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 5. Roomy Volt AI Assistant Bar -->
+        <section
+          class="bg-[#12151b] border border-[#1e222a] rounded-2xl p-7 flex flex-col gap-5 mb-6"
+        >
+          <div
+            class="flex items-center justify-between pb-3 border-b border-zinc-800/60"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white"
+              >
+                <span class="material-symbols-outlined text-lg">smart_toy</span>
+              </div>
+              <div>
+                <span class="text-sm font-bold text-white font-heading block"
+                  >Volt AI Fitness Coach</span
+                >
+                <span class="text-xs text-zinc-400"
+                  >Rekomendasi nutrisi, beban, &amp; pemulihan instan</span
+                >
+              </div>
+            </div>
+            <span
+              class="text-xs font-semibold text-zinc-400 bg-[#161a23] border border-[#222734] px-2.5 py-1 rounded-md"
+              >v4.2 Pro</span
+            >
+          </div>
+          <!-- Chat History with Spacious Bubbles -->
+          <div
+            class="flex flex-col gap-3.5 max-h-60 overflow-y-auto pr-1 py-1"
+            id="chat-messages"
+          >
+            <div
+              class="self-end bg-[#1e2432] text-zinc-100 text-xs px-4 py-3 rounded-2xl max-w-lg leading-relaxed shadow-sm border border-[#2b3346]"
+            >
+              Protein pasca latihan chest berat 70kg?
+            </div>
+            <div
+              class="self-start bg-[#151922] border border-[#202532] text-zinc-300 text-xs px-4 py-3 rounded-2xl max-w-xl leading-relaxed shadow-sm"
+            >
+              Konsumsi
+              <span class="text-white font-semibold">28–35g protein</span> (1
+              scoop whey isolate atau 150g dada ayam panggang) dalam kurun waktu
+              60–90 menit pasca sesi latihan.
+            </div>
+          </div>
+          <!-- Quick Suggestion Prompts -->
+          <div class="flex items-center gap-2 overflow-x-auto pt-1">
+            <span
+              class="text-[11px] text-zinc-400 font-medium whitespace-nowrap mr-1"
+              >Saran:</span
+            >
+            <button
+              class="quick-prompt-btn text-xs bg-[#161a23] border border-[#222734] hover:border-slate-500 text-zinc-300 hover:text-white px-3.5 py-1.5 rounded-xl transition-colors whitespace-nowrap"
+              type="button"
+            >
+              Menu Nutrisi
+            </button>
+            <button
+              class="quick-prompt-btn text-xs bg-[#161a23] border border-[#222734] hover:border-slate-500 text-zinc-300 hover:text-white px-3.5 py-1.5 rounded-xl transition-colors whitespace-nowrap"
+              type="button"
+            >
+              Alternatif Barbell Row
+            </button>
+            <button
+              class="quick-prompt-btn text-xs bg-[#161a23] border border-[#222734] hover:border-slate-500 text-zinc-300 hover:text-white px-3.5 py-1.5 rounded-xl transition-colors whitespace-nowrap"
+              type="button"
+            >
+              Pemanasan Otot Dada
+            </button>
+          </div>
+          <!-- Spacious Input Bar -->
+          <form class="flex items-center gap-3 mt-2" id="ai-chat-form">
+            <input
+              class="flex-1 bg-[#0e1116] border border-[#202532] text-zinc-100 placeholder:text-zinc-500 text-xs rounded-xl px-4 py-3 outline-none focus:border-slate-400 transition-colors"
+              id="ai-chat-input"
+              placeholder="Tanyakan program latihan, alternatif gerakan, atau kalkulasi nutrisi..."
+              type="text"
+            />
+            <button
+              class="px-5 py-3 bg-white text-zinc-900 hover:bg-[#161619] text-xs font-bold rounded-xl transition-colors flex items-center gap-1.5 shadow"
+              type="submit"
+            >
+              <span>Kirim</span>
+              <span class="material-symbols-outlined text-sm font-bold"
+                >send</span
+              >
+            </button>
+          </form>
+        </section>
+      </main>
+    </div>
+    <script>
+      // Profile Save Feedback
+      const saveBtn = document.getElementById("btn-save-profile");
+      if (saveBtn) {
+        saveBtn.addEventListener("click", () => {
+          const originalHtml = saveBtn.innerHTML;
+          saveBtn.innerHTML =
+            '<span class="material-symbols-outlined text-xs animate-spin">progress_activity</span><span>Menyimpan...</span>';
+          setTimeout(() => {
+            saveBtn.innerHTML =
+              '<span class="material-symbols-outlined text-xs font-bold">done</span><span>Tersimpan</span>';
+            setTimeout(() => {
+              saveBtn.innerHTML = originalHtml;
+            }, 1800);
+          }, 500);
+        });
+      }
+
+      // Filter Logic
+      const muscleChips = document.querySelectorAll(".filter-chip-muscle");
+      const diffChips = document.querySelectorAll(".filter-chip-diff");
+      const workoutCards = document.querySelectorAll(".workout-card");
+
+      let activeMuscle = "chest";
+      let activeDiff = "all";
+
+      function updateWorkoutDisplay() {
+        workoutCards.forEach((card) => {
+          const cardMuscle = card.getAttribute("data-muscle");
+          const cardDiff = card.getAttribute("data-level");
+
+          const matchMuscle =
+            activeMuscle === "all" || cardMuscle === activeMuscle;
+          const matchDiff = activeDiff === "all" || cardDiff === activeDiff;
+
+          if (matchMuscle && matchDiff) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      muscleChips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          muscleChips.forEach((c) => {
+            c.classList.remove("bg-white", "text-zinc-900", "shadow");
+            c.classList.add(
+              "bg-[#161a23]",
+              "text-zinc-400",
+              "border",
+              "border-[#222734]",
+            );
+          });
+          chip.classList.remove(
+            "bg-[#161a23]",
+            "text-zinc-400",
+            "border",
+            "border-[#222734]",
+          );
+          chip.classList.add("bg-white", "text-zinc-900", "shadow");
+          activeMuscle = chip.getAttribute("data-group");
+          updateWorkoutDisplay();
+        });
+      });
+
+      diffChips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          diffChips.forEach((c) => {
+            c.classList.remove("bg-[#222734]", "text-white", "shadow-sm");
+            c.classList.add("text-zinc-400");
+          });
+          chip.classList.remove("text-zinc-400");
+          chip.classList.add("bg-[#222734]", "text-white", "shadow-sm");
+          activeDiff = chip.getAttribute("data-diff");
+          updateWorkoutDisplay();
+        });
+      });
+
+      // Simple Minimal AI Chat
+      const chatForm = document.getElementById("ai-chat-form");
+      const chatInput = document.getElementById("ai-chat-input");
+      const chatMessages = document.getElementById("chat-messages");
+      const promptButtons = document.querySelectorAll(".quick-prompt-btn");
+
+      function appendUserMessage(text) {
+        const userDiv = document.createElement("div");
+        userDiv.className =
+          "self-end bg-[#1e2432] text-zinc-100 text-xs px-4 py-3 rounded-2xl max-w-lg leading-relaxed shadow-sm border border-[#2b3346]";
+        userDiv.textContent = text;
+        chatMessages.appendChild(userDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function simulateAiResponse(query) {
+        const aiDiv = document.createElement("div");
+        aiDiv.className =
+          "self-start bg-[#151922] border border-[#202532] text-zinc-300 text-xs px-4 py-3 rounded-2xl max-w-xl leading-relaxed shadow-sm";
+        aiDiv.innerHTML =
+          '<span class="text-zinc-400 italic">Menganalisis...</span>';
+        chatMessages.appendChild(aiDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        setTimeout(() => {
+          let response =
+            "Latihan tersimpan. Jaga tempo eksentrik terkontrol 2-3 detik.";
+          if (
+            query.toLowerCase().includes("nutrisi") ||
+            query.toLowerCase().includes("menu")
+          ) {
+            response =
+              "Target: 2.100 kkal (160g protein, 200g karbohidrat, 60g lemak). Perbanyak hidrasi.";
+          } else if (
+            query.toLowerCase().includes("row") ||
+            query.toLowerCase().includes("ganti")
+          ) {
+            response =
+              "Alternatif aman: Chest-supported Dumbbell Row atau Seated Cable Row.";
+          } else if (
+            query.toLowerCase().includes("pemanasan") ||
+            query.toLowerCase().includes("dada")
+          ) {
+            response =
+              "Pemanasan: Band pull-aparts 2 set, arm circles, dan 2 warm-up set beban ringan.";
+          }
+          aiDiv.textContent = response;
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 600);
+      }
+
+      if (chatForm && chatInput) {
+        chatForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const val = chatInput.value.trim();
+          if (!val) return;
+          appendUserMessage(val);
+          chatInput.value = "";
+          simulateAiResponse(val);
+        });
+      }
+
+      promptButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const text = btn.textContent.trim();
+          appendUserMessage(text);
+          simulateAiResponse(text);
+        });
+      });
+    </script>
+  </body>
+</html>
